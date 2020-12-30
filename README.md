@@ -1,5 +1,5 @@
 # Bitcoin Price Forecasting
-[Read this post on my website](https://naingthet.github.io/posts/fraud/fraud/)
+[Read this post on my website](https://naingthet.github.io/posts/bitcoin-price-forecasting/bitcoin-price-forecasting/)
 
 ![jpg](images/bitcoin.jpg)
 
