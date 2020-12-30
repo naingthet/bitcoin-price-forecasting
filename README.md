@@ -660,8 +660,3 @@ Despite the limitations, the Prophet model is still promising for enthusiasts wh
 In this project, we developed three models for the prediction of Bitcoin prices. We found that our LSTM model had the strongest performance in predicting prices sequentially, but our Prophet model was able to learn general trends that may be more useful for long-term forecasting. We used the Prophet model to predict prices 3 months into the future, and found that Bitcoin prices are likely to stay relatively stable, with a slight upward trend.
 
 The goal of this project was to explore the capacity of various models to forecast Bitcoin prices, and we were very successful in this regard. We found that our LSTM and Prophet forecasts were able to accurately predict Bitcoin prices, suggesting that there are instrinsic characteristics of Bitcoin market trends that can be understood through modeling. The results of our analysis suggest that these novel forecasting techniques hold great promise for the future, despite significant limitations that remain at present day.
-
-
-```
-!jupyter nbconvert --to markdown notebook.ipynb
-```
