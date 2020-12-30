@@ -166,8 +166,7 @@ plt.title('Bitcoin Historical Price')
 plt.ylabel('Weighted Price (USD)');
 ```
 
-
-![png](bitcoin-price-forecasting_files/bitcoin-price-forecasting_15_0.png)
+![png](images/bitcoin-price-forecasting_15_0.png)
 
 
 We can see that at the end of 2017, Bitcoin prices soared to nearly $20,000. Since then, it has seen dramatic fluctuations, which will make our task very interesting.
@@ -253,7 +252,7 @@ ax.set_xlabel('Date');
 ```
 
 
-![png](bitcoin-price-forecasting_files/bitcoin-price-forecasting_21_0.png)
+![png](images/bitcoin-price-forecasting_21_0.png)
 
 
 ## Forecasting 2020 Bitcoin Prices
@@ -350,7 +349,7 @@ y_test, y_pred_rnn = forecast(simple_rnn)
 
 
 
-![png](bitcoin-price-forecasting_files/bitcoin-price-forecasting_26_1.png)
+![png](images/bitcoin-price-forecasting_26_1.png)
 
 
 We have presented two graphs here: the top graph shows the entire history of Bitcoin data, while the bottom graph zooms in on the 2020 data.
@@ -395,7 +394,7 @@ y_test, y_pred_lstm = forecast(lstm)
 
 
 
-![png](bitcoin-price-forecasting_files/bitcoin-price-forecasting_31_1.png)
+![png](images/bitcoin-price-forecasting_31_1.png)
 
 
 In contrast to our simple RNN, which was not able to sufficiently learn the trends of Bitcoin prices, it appears that our LSTM model did an excellent job of predicting Bitcoin prices. We can see from our bottom graph, which focuses on the test period, that the predictions follow the trend of actual prices very closely, with a slight temporal delay. Overall, this model appears to have performed very well, especially when comparing to the simple RNN.
@@ -505,7 +504,7 @@ y_test, y_pred_prophet  = prophet_forecast(train_df, test_df)
 
 
 
-![png](bitcoin-price-forecasting_files/bitcoin-price-forecasting_37_1.png)
+![png](images/bitcoin-price-forecasting_37_1.png)
 
 
 Just like that, we have applied Facebook's Prophet forecaster to our use case of predicting Bitcoin prices. We can see from the RMSE and the visualizations that the model did not perform as well as our LSTM RNN, which had the best performance overall. However, the Prophet model also did a great job of predicting the Bitcoin prices in 2020.
@@ -604,7 +603,7 @@ y_test, y_pred_prophet_future  = prophet_forecast_future(train_df, future_df)
 ```
 
 
-![png](bitcoin-price-forecasting_files/bitcoin-price-forecasting_44_0.png)
+![png](images/bitcoin-price-forecasting_44_0.png)
 
 
 We have now forecasted Bitcoin prices for the next 3 months using the Prophet model. The forecast results suggest that Bitcoin will remain relatively stable and will fluctuate between approximately \$10,000 - $12,500, with a slight upward trend.  
@@ -632,7 +631,7 @@ ax.set_xlabel('Date');
 ```
 
 
-![png](bitcoin-price-forecasting_files/bitcoin-price-forecasting_48_0.png)
+![png](images/bitcoin-price-forecasting_48_0.png)
 
 
 Our analysis found that the **LSTM model had the greatest test performance**, accurately predicting Bitcoin prices and trends. We can see that the LSTM forecast very closely fits the actual Bitcoin prices. Our results suggest that LSTM models are relatively very promising for forecasting Bitcoin prices; however, because RNN/LSTM models require specific data structures and make predictions one day at a time based on x timesteps (in our case, 60), it is very difficult to make future forecasts. This is because the models are trained sequentially, and thus, if we were to make predictions 30 days into the future, our predictions would become increasingly inaccurate as they become more and more dependent on extrapolated data.
@@ -649,7 +648,7 @@ y_test, y_pred_prophet_future  = prophet_forecast_future(train_df, future_df)
 ```
 
 
-![png](bitcoin-price-forecasting_files/bitcoin-price-forecasting_51_0.png)
+![png](images/bitcoin-price-forecasting_51_0.png)
 
 
 **Our Prophet forecast suggests that Bitcoin prices will remain relatively stable with a slight upward trend.** As we saw with our actual 2020 data, the Prophet model is generally accurate with predictions. However, there are certainly significant limitations to consider here. While Prophet has the capacity to take seasonality into consideration, forecasting predictions should still be taken with a grain of salt, as these models are unable to consider world events and public perceptions. If there are major shifts in the perceptions of Bitcoin or other cryptocurrencies, this may have an impact on prices. For example, if large companies continued to invest in Bitcoin, that would have a positive impact on Bitcoin prices; if, instead, companies decided to abandon Bitcoin, then that would likely result in a sharp decrease in Bitcoin prices.   
