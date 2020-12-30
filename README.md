@@ -319,6 +319,7 @@ We will apply RNN models, which are a broad class of deep neural networks that a
 
 With feed-forward neural networks, information moves in one direction (input > hidden layers > output). In contrast to feed-forward networks, RNNs use loops, allowing hidden layer outputs to be used as inputs that are fed back into the hidden layers. This allows RNNs to use sequence information and, in a sense, have memory that considers prior inputs. In our case, this will allow our neural networks to make predictions on Bitcoin prices based on time-series data; our RNNs will be able to sequentially learn how Bitcoin prices change and, in turn, how these sequential changes lead to different y values [[Image Source](https://www.researchgate.net/figure/Feed-forward-and-recurrent-neural-networks_fig5_305881131)].
 
+![png](images/rnn-vs-ff-nn.png)
 
 
 #### Simple RNN
@@ -365,7 +366,7 @@ Due to vanishing gradients, RNNs tend to have trouble retaining information from
 #### Long Short-Term Memory (LSTM) RNN
 LSTMs are a subclass of RNNs that seeks to combat the problem of vanishing gradients and short-term memory. LSTMs contain "gates", which are mechanisms that allow the LSTM to either keep or throw out previous data as the RNN runs loops. These gates, therefore, serve as the memory system for the LSTMs, and allow these models to integrate learnings from earlier values in the sequences. In our case, this will allow our Bitcoin forecasting model to hold on to information about earlier Bitcoin prices (specifically, up to 60 days before the price we are trying to predict). In the process of backpropogation, our models can learn to either forget or retain specific information based on how valuable it is for the purpose of predicting future outcomes. [[Image Source](https://link.springer.com/chapter/10.1007/978-3-030-15986-3_3)].
 
-https://media.springernature.com/original/springer-static/image/chp%3A10.1007%2F978-3-030-15986-3_3/MediaObjects/480826_1_En_3_Fig1_HTML.png
+![png](images/lstm.png)
 
 We will build a relatively simple, single-layer LSTM with tanh activation function (this is the most popular option) and 128 neurons. As with the simple RNN, we will use data from before 2020 to train the model and use the model to predict prices of Bitcoin in 2020; for each day in 2020, our model will predict the price based on the prices of the preceding 60 days.
 
